@@ -1,72 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>MY PORTFOLIO | Portfolio</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>David Kivinda - Portfolio</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    header {
+      background-color: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 1.5rem 1rem;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .intro h1 {
+      margin: 0.3rem 0;
+      font-size: 1.8rem;
+    }
+
+    .profile-img {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+    }
+
+    .profile-img img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 3px solid #001f3f;
+      object-fit: cover;
+    }
+
+    .download-btn {
+      display: flex;
+      justify-content: center;
+      margin: 1rem;
+    }
+
+    .download-btn a {
+      text-decoration: none;
+      background-color: #001f3f;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 1rem 2rem;
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 1.5rem;
+    }
+
+    footer {
+      background-color: #001f3f;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .intro h1 {
+        font-size: 2.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <h1>HI, MY NAME IS DAVID KIVINDA</h1>
-        <p>Welcome to my portfolio! I’m passionate about tech, science, and creativity. Dive in and see what I’ve been working on.</p>
-        <p>IT EXPERT| CYBER SECURITY ENTHUSIAST | FULLTIME PROGRAMMER</p>
+  <header>
+    <h2>Hello! Welcome to my Portfolio</h2>
+  </header>
 
-        <!-- 📸 Your photo -->
-        <img src="{{ url_for('static', filename='IMG_E5056-Photoroom') }}" 
-             alt="David Kivinda" 
-             width="200" 
-             style="border-radius: 100px; margin-top: 15px;">
+  <div class="intro">
+    <h1>My name is DAVID KIVINDA</h1>
+  </div>
 
-        <!-- 📄 Resume preview immediately below image -->
-        <iframe src="{{ url_for('static', filename='resume/my resume.pdf') }}" 
-                width="100%" height="600px"
-                style="border: 1px solid #ccc; border-radius: 10px; margin-top: 20px;">
-        </iframe>
+  <div class="profile-img">
+    <img src="/static/IMG_E5056-Photoroom.png" alt="David Kivinda">
+  </div>
 
-        <!-- ✅ Single download button -->
-        <br>
-        <a href="{{ url_for('static', filename='resume/my resume.pdf') }}" download>
-            <button class="resume-btn">📄 Download My Resume</button>
-        </a>
-    </header>
+  <div class="download-btn">
+    <a href="/static/resume/my resume.pdf" download>Download Resume</a>
+  </div>
 
-    <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm David Kivinda, currently pursuing a BSc in Physical Science with IT at JKUAT (2023–2027). I have a Second Upper Class of Honors and experience at Huawei as a Cyber Security Control Assistant (2024–2025), where I ensured system security and integrity.</p>
-        </section>
+  <section>
+    <h2>About Me</h2>
+    <p>I am a Physical Science student at Jomo Kenyatta University of Agriculture and Technology, passionate about cybersecurity and programming.</p>
+    <p>I worked at Huawei as a Cyber Security Control Assistant (2024–2025), ensuring systems were secure.</p>
+  </section>
 
-        <section id="skills">
-            <h2>Skills</h2>
-            <ul>
-                <li><strong>Programming Languages:</strong> Python, JavaScript, C++</li>
-                <li><strong>Tools:</strong> Git, VS Code, Flask, Linux</li>
-                <li><strong>Soft Skills:</strong> Teamwork, Communication, Leadership</li>
-                <li>Expert in Computer Graphics</li>
-                <li>Digital Video Editing & Photo Editing (Photoshop)</li>
-                <li>Computer Repair (Hardware & Software)</li>
-            </ul>
-        </section>
+  <section>
+    <h2>Projects</h2>
+    <h3>Weather App</h3>
+    <p>A weather app that fetches real-time data using an API.</p>
+    <p><strong>Technologies used:</strong> Python, CSS, HTML</p>
+  </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Weather App</h3>
-                <p>A weather app that fetches real-time data using an API.</p>
-                <p><strong>Technologies Used:</strong> Python, HTML, CSS</p>
-            </div>
-        </section>
-    </main>
+  <section>
+    <h2>Skills</h2>
+    <ul>
+      <li>Programming Languages: Python, HTML, CSS</li>
+      <li>Tools: Git, VS Code, Flask</li>
+      <li>Soft Skills: Teamwork, Communication, Leadership</li>
+      <li>Expert in Computer Graphics, Digital Video Editing, Photo Shopping</li>
+      <li>Computer Repair Specialist</li>
+    </ul>
+  </section>
 
-    <footer>
-        <p>Contact:</p>
-        <ul>
-            <li>Email: <a href="mailto:kivindadavid8@gmail.com">kivindadavid8@gmail.com</a></li>
-            <li>Phone: <a href="tel:+254797742966">0797 742 966</a></li>
-        </ul>
-    </footer>
+  <section>
+    <h2>Contact</h2>
+    <p>Email: kivindadavid8@gmail.com</p>
+    <p>Phone: 0797742966</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 David Kivinda</p>
+  </footer>
 
 </body>
 </html>
+
 
